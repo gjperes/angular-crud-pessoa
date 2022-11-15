@@ -7,6 +7,7 @@ import { CidadeModule } from './cidade/cidade.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { EstadoModule } from './estado/estado.module';
 import { PessoaModule } from './pessoa/pessoa.module';
+import { SharedModule } from './shared';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { PessoaModule } from './pessoa/pessoa.module';
     EstadoModule,
     CidadeModule,
     EnderecoModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

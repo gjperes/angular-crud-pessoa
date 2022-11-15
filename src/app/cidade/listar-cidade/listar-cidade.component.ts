@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cidade } from 'src/app/shared/models/cidade';
+import { Cidade } from 'src/app/shared';
 import { CidadeService } from '../services/cidade.service';
 
 @Component({

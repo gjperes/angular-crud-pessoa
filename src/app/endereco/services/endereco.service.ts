@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Endereco } from 'src/app/shared/models/endereco';
+import { Endereco } from 'src/app/shared';
 
 const LOCAL_STORAGE_KEY = 'enderecos';
 

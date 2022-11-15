@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Estado } from 'src/app/shared/models/estado';
+import { Estado } from 'src/app/shared';
 
 const LOCAL_STORAGE_KEY = 'estados';
 

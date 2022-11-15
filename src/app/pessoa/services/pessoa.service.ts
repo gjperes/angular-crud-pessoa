@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pessoa } from 'src/app/shared/models/pessoa.model';
+import { Pessoa } from 'src/app/shared';
 
 const LOCAL_STORAGE_KEY = 'pessoas';
 
