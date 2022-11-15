@@ -22,6 +22,16 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="dataNascimento">Data de Nascimento:</label>
+      <input type="text" class="form-control" id="dataNascimento" name="dataNascimento" [(ngModel)]="pessoa.dataNascimento" #dataNascimento="ngModel"
+        required>
+      <div *ngIf="dataNascimento.errors && (dataNascimento.dirty || dataNascimento.touched)" class="alert alert-danger">
+        <div [hidden]="!dataNascimento.errors['required']">
+          Digite a data de nascimento da pessoa.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
       <button class="btn btn-primary" (click)="atualizar()" [disabled]="!formPessoa.form.valid">
         <i class="fa fa-save" aria-hidden="true"></i>
         Atualizar
