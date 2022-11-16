@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <button class="btn btn-xs btn-outline-dark close" type="button" aria-label="Fechar" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title" id="modalLabel">Estado</h4>
+</div>
+<div class="modal-body text-center">
+  <div>
+    <p>Estado: {{estado.nome}}</p>
+    <p>Sigla: {{estado.sigla}}</p>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" (click)="activeModal.close()" class="btn btn-outline-dark">Fechar</button>
+</div>

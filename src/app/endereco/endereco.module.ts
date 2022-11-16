@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { EnderecoService } from './services/endereco.service';
 import { SharedModule } from '../shared';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -16,6 +17,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     ListarEnderecoComponent,
     EditarEnderecoComponent,
     InserirEnderecoComponent,
+    ModalEnderecoComponent,
   ],
   imports: [
     CommonModule,

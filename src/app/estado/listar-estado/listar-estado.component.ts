@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Estado } from 'src/app/shared';
+import { ModalEstadoComponent } from '../modal-estado/modal-estado.component';
 import { EstadoService } from '../services/estado.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { EstadoService } from '../services/estado.service';
 export class ListarEstadoComponent implements OnInit {
   estados: Estado[] = [];
 
-  constructor(private estadoService: EstadoService) { }
+  constructor(private estadoService: EstadoService, public modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.estados = this.listarTodos();
@@ -26,5 +28,10 @@ export class ListarEstadoComponent implements OnInit {
       this.estadoService.remover(estado.id!);
       this.estados = this.listarTodos();
     }
+  }
+
+  abrirModalEstado(estado: Estado) {
+    const modalRef = this.modalService.open(ModalEstadoComponent);
+    modalRef.componentInstance.estado = estado;
   }
 }

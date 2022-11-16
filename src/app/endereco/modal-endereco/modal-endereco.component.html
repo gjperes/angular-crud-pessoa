@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <button class="btn btn-xs btn-outline-dark close" type="button" aria-label="Fechar" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title" id="modalLabel">Endereço</h4>
+</div>
+<div class="modal-body text-center">
+  <div>
+    <p>Rua: {{endereco.rua}}</p>
+    <p>Número: {{endereco.numero}}</p>
+    <p>Complemento: {{endereco.complemento}}</p>
+    <p>Bairro: {{endereco.bairro}}</p>
+    <p>Cidade: {{endereco.cidade}}</p>
+    <p>Estado: {{endereco.estado}}</p>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" (click)="activeModal.close()" class="btn btn-outline-dark">Fechar</button>
+</div>
