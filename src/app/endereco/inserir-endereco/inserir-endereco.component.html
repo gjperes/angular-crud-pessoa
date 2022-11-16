@@ -3,6 +3,12 @@
 <div class="well">
   <form #formEndereco="ngForm">
     <div class="form-group">
+      <label for="tipo">Prefixo:</label><br/>
+      <input type="radio" name="tipo" id="tipo1" class="form-check-input" [(ngModel)]="endereco.tipo" #tipo1="ngModel" value="Rua">Rua<br/>
+      <input type="radio" name="tipo" id="tipo2" class="form-check-input" [(ngModel)]="endereco.tipo" #tipo2="ngModel" value="Avenida">Avenida<br/>
+      <input type="radio" name="tipo" id="tipo3" class="form-check-input" [(ngModel)]="endereco.tipo" #tipo3="ngModel" value="Travessa">Travessa<br/>
+    </div>
+    <div class="form-group">
       <label for="rua">Rua:</label>
       <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="endereco.rua" #rua="ngModel"
         minlength="2" required>
@@ -47,23 +53,11 @@
         <div [hidden]="!cep.errors['mask']">O CEP é inválido.</div>
       </div>
     </div>
+    <ng-select name="cidade" [items]="cidades" bindLabel="nome" [(ngModel)]="endereco.cidade" placeholder="Selecione uma cidade"></ng-select>
+    <ng-select name="estado" [items]="estados" bindLabel="sigla" [(ngModel)]="endereco.estado" placeholder="Selecione um estado"></ng-select>
     <div class="form-group">
-      <label for="cidade">Cidade:</label>
-      <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="endereco.cidade" #cidade="ngModel"
-        minlength="2" required>
-      <div *ngIf="cidade.errors && (cidade.dirty || cidade.touched)" class="alert alert-danger">
-        <div [hidden]="!cidade.errors['required']">Digite a cidade.</div>
-        <div [hidden]="!cidade.errors['minlength']">A cidade deve conter no mínimo 2 caracteres.</div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="estado">Estado:</label>
-      <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="endereco.estado" #estado="ngModel"
-        minlength="2" required>
-      <div *ngIf="estado.errors && (estado.dirty || estado.touched)" class="alert alert-danger">
-        <div [hidden]="!estado.errors['required']">Digite o estado.</div>
-        <div [hidden]="!estado.errors['minlength']">O estado deve conter no mínimo 2 caracteres.</div>
-      </div>
+      <label for="residencial">Residencial:</label>
+      <input type="checkbox" class="form-check-input" id="residencial" name="residencial" [(ngModel)]="endereco.residencial" #residencial="ngModel">
     </div>
     <div class="form-group">
       <button class="btn btn-primary" (click)="inserir()" [disabled]="!formEndereco.form.valid">

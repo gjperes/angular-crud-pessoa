@@ -9,6 +9,7 @@ import { EnderecoService } from './services/endereco.service';
 import { SharedModule } from '../shared';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -24,7 +25,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     FormsModule,
     RouterModule,
     SharedModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    NgSelectModule
   ],
   providers: [EnderecoService],
 })

@@ -9,6 +9,7 @@
       <th>CEP</th>
       <th>Cidade</th>
       <th>Estado</th>
+      <th>Tipo</th>
       <th class="text-center">
         <a [routerLink]="['/enderecos/novo']" title="Novo" alt="Novo" class="btn btn-xs btn-success">
           <i class="fa fa-plus" aria-hidden="true"></i>
@@ -17,12 +18,13 @@
       </th>
     </tr>
     <tr *ngFor="let endereco of enderecos">
-      <td>{{endereco.rua + ", " + endereco.numero}}</td>
+      <td>{{endereco.tipo + " " + endereco.rua + ", " + endereco.numero}}</td>
       <td>{{endereco.complemento}}</td>
       <td>{{endereco.bairro}}</td>
       <td>{{endereco.cep! | mask: '00000-000'}}</td>
-      <td>{{endereco.cidade}}</td>
-      <td>{{endereco.estado}}</td>
+      <td>{{endereco.cidade?.nome}}</td>
+      <td>{{endereco.estado?.sigla}}</td>
+      <td>{{endereco.residencial! ? "Residencial" : "Comercial" }}</td>
       <td class="text-center">
         <button class="btn btn-xs btn-info" (click)="abrirModalEndereco(endereco)">
           <i class="fa fa-eye" aria-hidden="true"></i> Ver

@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CidadeService } from './services/cidade.service';
 import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
     EditarCidadeComponent,
     ModalCidadeComponent,
   ],
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, NgSelectModule],
   providers: [CidadeService],
 })
 export class CidadeModule {}

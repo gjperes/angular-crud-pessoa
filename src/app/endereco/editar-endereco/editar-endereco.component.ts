@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Endereco } from 'src/app/shared';
+import { CidadeService } from 'src/app/cidade/services/cidade.service';
+import { EstadoService } from 'src/app/estado/services/estado.service';
+import { Cidade, Endereco, Estado } from 'src/app/shared';
 import { EnderecoService } from '../services/endereco.service';
 
 @Component({
@@ -12,11 +14,15 @@ import { EnderecoService } from '../services/endereco.service';
 export class EditarEnderecoComponent implements OnInit {
   @ViewChild('formEndereco') formEndereco!: NgForm;
   endereco!: Endereco;
+  cidades: Cidade[] = [];
+  estados: Estado[] = [];
 
   constructor(
     private enderecoService: EnderecoService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private cidadeService: CidadeService,
+    private estadoService: EstadoService
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +31,9 @@ export class EditarEnderecoComponent implements OnInit {
 
     if (res === undefined) throw new Error(`Endereço não encontrado: id = ${id}`);
     this.endereco = res;
+
+    this.cidades = this.cidadeService.listarTodos();
+    this.estados = this.estadoService.listarTodos();
   }
 
   atualizar() {

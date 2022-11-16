@@ -11,17 +11,7 @@
         <div [hidden]="!nome.errors['minlength']">O nome da cidade deve conter no mínimo 2 caracteres.</div>
       </div>
     </div>
-    <div class="form-group">
-      <label for="estado">Estado:</label>
-      <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="cidade.estado" #estado="ngModel"
-        required minlength="2">
-      <div *ngIf="estado.errors && (estado.dirty || estado.touched)" class="alert alert-danger">
-        <div [hidden]="!estado.errors['required']">
-          Digite o nome do estado.
-        </div>
-        <div [hidden]="!estado.errors['minlength']">O nome do estado deve conter no mínimo 2 caracteres.</div>
-      </div>
-    </div>
+    <ng-select name="estado" [items]="estados" bindLabel="sigla" [(ngModel)]="cidade.estado" placeholder="Selecione um estado"></ng-select>
     <div class="form-group">
       <button class="btn btn-primary" (click)="inserir()" [disabled]="!formCidade.form.valid">
         <i class="fa fa-save" aria-hidden="true"></i>
