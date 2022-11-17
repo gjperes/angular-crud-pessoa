@@ -19,7 +19,7 @@
         <button class="btn btn-xs btn-info" (click)="abrirModalEstado(estado)">
           <i class="fa fa-eye" aria-hidden="true"></i> Ver
         </button>
-        <a [routerLink]="['/estados/editar', estado.id]" title="Editar" alt="Editar" class="btn btn-xs btn-info">
+        <a [routerLink]="['/estados/editar', estado.id]" title="Editar" alt="Editar" class="btn btn-xs btn-warning">
           <i class="fa fa-edit"></i> Editar
         </a>
         <a (click)="remover($event, estado)" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
