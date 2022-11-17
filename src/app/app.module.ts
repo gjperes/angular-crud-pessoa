@@ -5,14 +5,16 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
 import { CidadeModule } from './cidade/cidade.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { EstadoModule } from './estado/estado.module';
 import { PessoaModule } from './pessoa/pessoa.module';
 import { SharedModule } from './shared';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +24,8 @@ import { SharedModule } from './shared';
     EnderecoModule,
     SharedModule,
     NgbModule,
-    NgSelectModule
+    NgSelectModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],
